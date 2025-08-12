@@ -1,7 +1,1 @@
-venv/
-__pycache__/
-db.sqlite3
-*.pyc
-media/
-.DS_Store
 
