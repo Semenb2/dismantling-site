@@ -47,7 +47,7 @@ ROOT_URLCONF = 'pastor_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'main', 'templates')],
+        'DIRS': [BASE_DIR / 'main' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -59,6 +59,7 @@ TEMPLATES = [
         },
     },
 ]
+
 WSGI_APPLICATION = 'pastor_site.wsgi.application'
 
 
