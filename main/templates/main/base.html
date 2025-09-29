@@ -1,32 +1,93 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Мій сайт{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- твои кастомные стили -->
+  <meta charset="UTF-8">
+  <title>{% block title %}Демонтаж{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=12">
 </head>
+
 <body>
-
-    <!-- Навбар -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Мій бренд</a>
+  <header class="header">
+    <!-- Верхняя тонкая панель -->
+    <div class="topbar">
+      <div class="topbar__left">
+        <span class="topbar__location lang-ua">Україна, м. Київ</span>
+        <span class="topbar__location lang-ru" style="display:none;">Украина, г. Киев</span>
       </div>
-    </nav>
 
-    <!-- Контент -->
-    <main class="container mt-4">
-        {% block content %}{% endblock %}
-    </main>
+      <div class="topbar__center">
+        <a href="tel:+380996028637" class="topbar__phone">+38 (099) 602-86-37</a>
+        <span>•</span>
+        <a href="tel:+380997283014" class="topbar__phone">+38 (099) 728-30-14</a>
+      </div>
 
-    <!-- Футер -->
-    <footer class="bg-dark text-white text-center py-3 mt-4">
-        &copy; 2025 Мій сайт. Всі права захищено.
-    </footer>
+      <div class="topbar__right">
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@user5961220595723" target="_blank" class="tiktok-link">
+          <img src="{% static 'images/tiktok.png' %}" alt="TikTok" class="tiktok-icon">
+          <span class="lang-ua">Наш TikTok</span>
+          <span class="lang-ru" style="display:none;">Наш TikTok</span>
+        </a>
 
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Языки -->
+        <button class="lang-btn" onclick="switchLanguage('uk')">UA</button>
+        <button class="lang-btn" onclick="switchLanguage('ru')">RU</button>
+      </div>
+    </div>
+
+    <!-- Основная панель -->
+    <div class="mainbar">
+      <!-- Логотип -->
+      <a href="{% url 'home' %}" class="site-logo">
+        <img src="{% static 'images/logod.png' %}" alt="Логотип">
+        <span class="lang-ua">Демонтажна компанія</span>
+        <span class="lang-ru" style="display:none;">Демонтажная компания</span>
+      </a>
+
+      <!-- Навигация -->
+      <nav class="nav" id="site-nav" aria-label="Главное меню">
+        <ul>
+          <li><a href="{% url 'home' %}" class="nav__link lang-ua">Головна</a>
+              <a href="{% url 'home' %}" class="nav__link lang-ru" style="display:none;">Главная</a></li>
+          <li><a href="{% url 'about' %}" class="nav__link lang-ua">Про нас</a>
+              <a href="{% url 'about' %}" class="nav__link lang-ru" style="display:none;">О нас</a></li>
+          <li><a href="{% url 'services' %}" class="nav__link lang-ua">Послуги</a>
+              <a href="{% url 'services' %}" class="nav__link lang-ru" style="display:none;">Услуги</a></li>
+          <li><a href="{% url 'reviews' %}" class="nav__link lang-ua">Відгуки</a>
+              <a href="{% url 'reviews' %}" class="nav__link lang-ru" style="display:none;">Отзывы</a></li>    
+          <li><a href="{% url 'contact' %}" class="nav__link lang-ua">Контакти</a>
+              <a href="{% url 'contact' %}" class="nav__link lang-ru" style="display:none;">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Контент страницы -->
+  {% block content %}
+  {% endblock %}
+
+  <!-- Переключение языков -->
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang-ua').forEach(el => {
+        el.style.display = (lang === 'uk') ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-ru').forEach(el => {
+        el.style.display = (lang === 'ru') ? '' : 'none';
+      });
+      // сохраняем выбор в localStorage
+      localStorage.setItem('lang', lang);
+    }
+
+    // при загрузке страницы восстанавливаем язык
+    document.addEventListener("DOMContentLoaded", function() {
+      const savedLang = localStorage.getItem('lang') || 'uk'; // по умолчанию украинский
+      switchLanguage(savedLang);
+    });
+  </script>
+
+  <script src="{% static 'script.js' %}?v=9"></script>
+  
 </body>
 </html>

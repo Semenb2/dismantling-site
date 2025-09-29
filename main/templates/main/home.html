@@ -1,241 +1,214 @@
+{% extends 'main/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="utf-8">
-  <title>Демонтаж і вивіз будівельного сміття</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      text-align: center;
-      background: url('{% static "path/to/your/background.jpg" %}') no-repeat center center fixed;
-      background-size: cover;
-    }
-    header {
-      background: #fff;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .contacts {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      width: 100%;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-    }
-    nav a {
-      font-size: 16px; 
-      color: #0077B6; 
-      text-decoration: none; 
-      font-weight: bold; 
-      border: 2px solid #0077B6; 
-      padding: 10px 20px; 
-      border-radius: 5px; 
-      transition: background 0.3s, color 0.3s, transform 0.2s;
-    }
-    nav a:hover { 
-      background: #0077B6; 
-      color: white; 
-      transform: translateY(-2px); 
-    }
 
-    .hero {
-      background: #fff;
-      text-align: center;
-      padding: 60px 20px;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-    .section {
-      padding: 40px 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s, transform 0.5s;
-      margin: 10px auto; /* Центрирование блоков */
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
-      max-width: 800px; /* Максимальная ширина блока */
-      border: 2px solid #0077B6; /* Обводка блока */
-    }
-    .section.visible { opacity: 1; transform: translateY(0); }
+{% block title %}Главная - Демонтажная компания{% endblock %}
 
-    /* Стили для заголовков */
-    h2 {
-      color: #0077B6; 
-      font-weight: bold; 
-      margin-bottom: 20px;
-    }
+{% block content %}
 
-    /* Стили для транспорта */
-    .vehicle-cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .vehicle-card {
-      border-radius: 10px;
-      padding: 15px;
-      background: #fff;
-      text-align: center;
-      width: 250px; /* Ширина карточки */
-      border: 2px solid #0077B6; /* Обводка для карточек */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для карточек */
-    }
-    .vehicle-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px; /* Отступ между изображением и текстом */
-    }
-    .vehicle-card h3 {
-      color: #0077B6;
-      margin: 10px 0;
-    }
-    .btn-order {
-      background: #0077B6;
-      color: white;
-      border: none;
-      padding: 8px 15px; /* Отступы для кнопки */
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-      margin: 10px auto; /* Центрирование кнопки */
-      display: inline-block; /* Для центрирования */
-    }
-    .btn-order:hover {
-      background: #005f7f;
-    }
-
-    footer { text-align: center; padding: 20px; }
-  </style>
-</head>
-<body>
-
-<header>
-  <div class="contacts">
-    <a href="tel:+380667180219">066 178 02 19</a>
-    <a href="tel:+380684783150">068 478 31 50</a>
-    <a href="https://www.tiktok.com/@user5961220595723" target="_blank">TikTok</a>
-  </div>
-  <nav>
-    <a href="#vehicles">Транспорт</a>
-    <a href="#services">Послуги</a>
-    <a href="#how-we-work">Як ми працюємо</a>
-    <a href="#location">Де працюємо</a>
-    <a href="#gallery">Галерея</a>
-  </nav>
-</header>
-
-<section id="vehicles" class="section">
-  <h2>Наш транспорт</h2>
-  <div class="vehicle-cards">
-    <div class="vehicle-card">
-      <img src="{% static 'pastor_site/main/static/main/images/gazel.jpg' %}" alt="Газель">
-      <h3>Газель 1.5 т</h3>
-      <p>Розмір: 2×3 м • Об’єм: 12 м³</p>
-      <p><strong>від 1500 грн</strong></p>
-      <button class="btn-order" onclick="alert('Телефон для замовлення: 066 178 02 19')">Замовити послугу</button>
-    </div>
-    <div class="vehicle-card">
-      <img src="{% static 'pastor_site/main/static/main/images/Kamaz.jpg' %}" alt="КамАЗ">
-      <h3>КамАЗ 10 т</h3>
-      <p>Розмір: 4×6 м • Об’єм: 30 м³</p>
-      <p><strong>від 3000 грн</strong></p>
-      <button class="btn-order" onclick="alert('Телефон для замовлення: 066 178 02 19')">Замовити послугу</button>
-    </div>
-  </div>
-</section>
-
-<section id="demontage" class="section">
-  <h2>Демонтаж</h2>
-  <p>Опис робіт по демонтажу...</p>
-  <button class="btn-order" onclick="alert('Телефон для замовлення: 066 178 02 19')">Замовити послугу</button>
-</section>
-
-<section id="waste-removal" class="section">
-  <h2>Вивіз будівельного сміття</h2>
-  <p>Опис послуг з вивезення сміття...</p>
-  <button class="btn-order" onclick="alert('Телефон для замовлення: 066 178 02 19')">Замовити послугу</button>
-</section>
-
-<section id="how-we-work" class="section">
-  <h2>Як ми працюємо</h2>
-  <p>Наш досвід та заслуги:</p>
-  <ol>
-    <li>Багаторічний досвід у сфері демонтажу та вивезення сміття.</li>
-    <li>Сотні задоволених клієнтів.</li>
-    <li>Використання сучасної техніки та обладнання.</li>
-    <li>Швидкість, якість та надійність у кожному замовленні.</li>
-  </ol>
-</section>
-
-<section id="location" class="section">
-  <h2>Де ми працюємо</h2>
-  <ul>
-    <li>Київ</li>
-    <li>Ірпінь</li>
-    <li>Буча</li>
-    <li>Гостомель</li>
-    <li>Нові Петрівці та інші населені пункти Київщини</li>
-  </ul>
-</section>
-
-<section id="gallery" class="section">
-  <h2>Галерея наших робіт</h2>
-  <div class="gallery-grid">
-    <img src="{% static 'app_name/images/work1.jpg' %}" alt="Робота 1">
-    <img src="{% static 'app_name/images/work2.jpg' %}" alt="Робота 2">
-    <img src="{% static 'app_name/images/work3.jpg' %}" alt="Робота 3">
-    <img src="{% static 'app_name/images/work4.jpg' %}" alt="Робота 4">
-  </div>
-</section>
-
-<footer>
-  <p>Контакти:</p>
-  <a href="mailto:youremail@example.com">Email</a> |
-  <a href="tel:+380XXXXXXXXX">Телефон</a>
-  <p>&copy; 2025 Вивіз Сервіс. Всі права захищені.</p>
-</footer>
+<!-- Подключаем AOS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('.section');
-    
-    const options = {
-      threshold: 0.1
-    };
+  AOS.init({ duration: 800, once: true });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, options);
-
-    sections.forEach(section => {
-      observer.observe(section);
+  // Аккордеон
+  document.querySelectorAll('.myth-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.parentElement;
+      card.classList.toggle('active');
     });
   });
 </script>
 
-</body>
-</html>
+<script>
+  document.querySelectorAll('.myth-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.parentElement;
+      card.classList.toggle('active');
+    });
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const headers = document.querySelectorAll(".guarantee-header");
+
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      const card = header.parentElement;
+      card.classList.toggle("active");
+    });
+  });
+});
+</script>
+
+
+<!-- Hero -->
+<section class="hero">
+  <h2 data-translate="title">Демонтаж і вивіз будівельного сміття в області Києва</h2>
+  <p data-translate="description">Ми виконуємо демонтаж будь-яких конструкцій швидко та якісно.</p>
+  <a href="#contacts" id="contact-button" class="btn-primary" data-translate="contactBtn">Контакты</a>
+</section>
+
+<!-- Наши принципы -->
+<section class="principles section-block" style="background-image: url('{% static "images/principles_bg.jpg" %}');">
+  <div class="overlay">
+    <h2 class="section-title">Наші принципи роботи</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-img">
+          <img src="{% static 'images/order.png' %}" alt="Обговорення замовлення">
+        </div>
+        <div class="card-text">Обговорюємо замовлення</div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="{% static 'images/transport.png' %}" alt="Підбір транспорту">
+        </div>
+        <div class="card-text">Підбір транспорту</div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="{% static 'images/visit.png' %}" alt="Виїзд по адресі">
+        </div>
+        <div class="card-text">Виїзд по адресі</div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="{% static 'images/order_form.png' %}" alt="Оформлення замовлення">
+        </div>
+        <div class="card-text">Оформлення замовлення</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Наши работы -->
+<section class="section-block" style="background-image: url('{% static "images/gallery_bg.jpg" %}');">
+  <div class="overlay">
+    <h2 class="section-title">Наші роботи по демонтажу:</h2>
+  </div>
+
+  <!-- Вынес галерею за overlay -->
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="{% static 'images/11.jpg' %}" alt="Робота 1">
+      <p>1</p>
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/12.jpg' %}" alt="Робота 2">
+      <p>2</p>
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/13.jpg' %}" alt="Робота 3">
+      <p>3</p>
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/14.jpg' %}" alt="Робота 4">
+      <p>4</p>
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/15.jpg' %}" alt="Робота 5">
+      <p>5</p>
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/16.jpg' %}" alt="Робота 6">
+      <p>6</p>
+    </div>
+  </div>
+</section>
+
+<!-- Проблеми -->
+<section class="section-block problems" style="background-image: url('{% static "images/problems_bg.jpg" %}');">
+  <div class="overlay">
+    <h2 class="section-title">Проблеми, які ми вирішуємо в демонтажі:</h2>
+
+    <div class="myths-block">
+      <h3 class="myths-title">Міфи про демонтаж:</h3>
+
+      <div class="myth-card">
+        <button class="myth-toggle">Міф 1. «Демонтаж можна зробити швидко і без підготовки»</button>
+        <div class="myth-content">
+          <p><strong>Реальність:</strong> Насправді демонтаж — це складний процес, який потребує попередніх обстежень, підготовки техніки та узгодження безпеки. Без цього можна пошкодити сусідні будівлі, комунікації чи навіть створити загрозу для людей.</p>
+        </div>
+      </div>
+
+      <div class="myth-card">
+        <button class="myth-toggle">Міф 2. «Достатньо лише кувалди й болгарки»</button>
+        <div class="myth-content">
+          <p><strong>Реальність:</strong> Сучасний демонтаж вимагає спеціалізованої техніки: екскаваторів із гідроножицями, гідромолотів, алмазного різання бетону тощо. Це швидше, акуратніше й безпечніше.</p>
+        </div>
+      </div>
+
+      <div class="myth-card">
+        <button class="myth-toggle">Міф 3. «Демонтаж — це дешево, адже все одно все зноситься»</button>
+        <div class="myth-content">
+          <p><strong>Реальність:</strong> Вартість залежить від складності, висоти будівлі, матеріалів та утилізації сміття. Професійні компанії дають прозорий кошторис без прихованих витрат.</p>
+        </div>
+      </div>
+
+      <div class="myth-card">
+        <button class="myth-toggle">Міф 4. «Будівельне сміття можна просто залишити на місці»</button>
+        <div class="myth-content">
+          <p><strong>Реальність:</strong> Законодавство України вимагає утилізації відходів на полігонах чи переробки. Інакше — штрафи. Відповідальний підрядник бере це на себе.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Гарантии -->
+<section class="section-block" style="background-image: url('{% static "images/guarantee_bg.jpg" %}');">
+  <div class="overlay guarantees">
+    <h2 class="section-title">Наші гарантії:</h2>
+    <div class="guarantee-cards">
+      
+      <div class="guarantee-card">
+        <div class="guarantee-header">1. Гарантія безпеки</div>
+        <div class="guarantee-body">
+          Ми працюємо лише за затвердженими технічними нормами. 
+          Всі об’єкти перед демонтажем обстежуються, а роботи виконуються з дотриманням техніки безпеки. 
+          Ви отримуєте 100% захист від аварійних ситуацій.
+        </div>
+      </div>
+
+      <div class="guarantee-card">
+        <div class="guarantee-header">2. Гарантія прозорої ціни</div>
+        <div class="guarantee-body">
+          Фіксований кошторис без прихованих платежів. 
+          Сума, яку ви бачите в договорі, залишається незмінною до завершення робіт. 
+          Жодних «сюрпризів» у фінансових питаннях.
+        </div>
+      </div>
+
+      <div class="guarantee-card">
+        <div class="guarantee-header">3. Гарантія чистої території</div>
+        <div class="guarantee-body">
+          Після демонтажу ми забезпечуємо повний вивіз та утилізацію будівельного сміття. 
+          Ви отримуєте чистий майданчик, готовий до нових будівельних робіт.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Футер -->
+<footer id="contacts">
+  <h2>Контакти</h2>
+  <p>Email: gazel251180@gmail.com</p>
+  <p>Області: Київ та околиці</p>
+  <p>
+    TikTok:
+    <a href="https://www.tiktok.com/@user5961220595723" target="_blank">
+      <img src="{% static 'images/tiktok.png' %}" alt="TikTok" style="height:30px;" />
+    </a>
+  </p>
+</footer>
+
+{% endblock %}
+

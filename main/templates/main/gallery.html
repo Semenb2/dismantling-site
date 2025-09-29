@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Галерея работ - Демонтажная компания №1{% endblock %}
+
+{% block content %}
+<section class="gallery">
+    <h2>Галерея наших работ</h2>
+    <div class="gallery-item">
+        <img src="{% static 'images/work1.jpg' %}" alt="Работа 1">
+        <p>Демонтаж перегородок в квартире.</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'images/work2.jpg' %}" alt="Работа 2">
+        <p>Алмазная резка бетона без пыли.</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'images/work3.jpg' %}" alt="Работа 3">
+        <p>Снос старого здания.</p>
+    </div>
+</section>
+{% endblock %}

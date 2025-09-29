@@ -1,0 +1,101 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Послуги - Демонтажна компанія №1{% endblock %}
+
+{% block content %}
+<section class="section-block services" style="background-image: url('{% static "images/services_bg.jpg" %}');">
+  <div class="overlay">
+    <h2 class="section-title">Наші послуги:</h2>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service1.png' %}" alt="Демонтаж та перепланування">
+        </div>
+        <div class="service-body">
+          <p>Демонтаж та перепланування</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service2.png' %}" alt="Алмазне різання без пилу">
+        </div>
+        <div class="service-body">
+          <p>Алмазне різання без пилу</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service3.png' %}" alt="Знесення будівель">
+        </div>
+        <div class="service-body">
+          <p>Знесення будівель</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service4.png' %}" alt="Встановлення рекуператорів та вентиляції">
+        </div>
+        <div class="service-body">
+          <p>Встановлення рекуператорів та вентиляції</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service5.png' %}" alt="Загальнобудівельні роботи">
+        </div>
+        <div class="service-body">
+          <p>Загальнобудівельні роботи</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service6.png' %}" alt="Земляні роботи">
+        </div>
+        <div class="service-body">
+          <p>Земляні роботи</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service7.png' %}" alt="Прибирання території">
+        </div>
+        <div class="service-body">
+          <p>Прибирання території</p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-img">
+          <img src="{% static 'images/service8.png' %}" alt="Ремонт квартир">
+        </div>
+        <div class="service-body">
+          <p>Ремонт квартир</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="services-note">Ми виконуємо як великі, так і невеликі обсяги робіт.</p>
+  </div>
+</section>
+
+<!-- Футер -->
+<footer id="contacts">
+  <h2>Контакти</h2>
+  <p>Email: <a href="mailto:gazel251180@gmail.com">gazel251180@gmail.com</a></p>
+  <p>Області роботи: Київ та область</p>
+  <p>
+    TikTok:
+    <a href="https://www.tiktok.com/@user5961220595723" target="_blank">
+      <img src="{% static 'images/tiktok.png' %}" alt="TikTok" style="height:30px;" />
+    </a>
+  </p>
+</footer>
+{% endblock %}

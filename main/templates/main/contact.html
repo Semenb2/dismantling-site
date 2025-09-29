@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Контакти - Демонтажна компанія №1{% endblock %}
+
+{% block content %}
+<section class="section-block contact" style="background-image: url('{% static "images/contact_bg.jpg" %}');">
+  <div class="overlay">
+    <h2 class="section-title">Контакти:</h2>
+    <div class="about-wrapper">
+      <div class="about-card big">
+        <p><strong>Телефони:</strong> +38 (099) 602-86-37; +38 (099) 728-30-14</p>
+        <p>
+          <strong>Телеграм:</strong>
+          <a href="https://t.me/+380997283014" target="_blank" style="color:#4aa3e2; font-weight:600;">
+            Написати у Telegram
+          </a>
+        </p>
+        <p><strong>Email:</strong> <a href="mailto:gazel251180@gmail.com">gazel251180@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Футер -->
+<footer id="contacts">
+  <h2>Наші контакти</h2>
+  <p>Email: <a href="mailto:gazel251180@gmail.com">gazel251180@gmail.com</a></p>
+  <p>Області роботи: Київ та околиці</p>
+  <p>
+    TikTok:
+    <a href="https://www.tiktok.com/@user5961220595723" target="_blank">
+      <img src="{% static 'images/tiktok.png' %}" alt="TikTok" style="height:30px;" />
+    </a>
+  </p>
+</footer>
+{% endblock %}
+
