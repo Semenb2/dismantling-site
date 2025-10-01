@@ -68,8 +68,12 @@ WSGI_APPLICATION = 'pastor_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'pastor_db',
+        'USER': 'pastor_user',
+        'PASSWORD': 'StrongPass123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
