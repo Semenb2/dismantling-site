@@ -71,11 +71,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'pastor_db',
         'USER': 'pastor_user',
-        'PASSWORD': 'StrongPass123',
+        'PASSWORD': 'Semen202820282028',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
